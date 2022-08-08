@@ -1,0 +1,44 @@
+﻿<Window x:Class="NetUtil.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetUtil"
+        mc:Ignorable="d"
+        Title="NetUtil" 
+        Height="204" Width="665"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="409*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="btnCheckPortStart" Content="Check port" HorizontalAlignment="Left" Margin="34,31,0,0" VerticalAlignment="Top" Width="70" Click="btnCheckPortPing_Click"/>
+        <Button x:Name="btnCheckPortCancle" Content="Cancle" HorizontalAlignment="Left" Margin="109,31,0,0" VerticalAlignment="Top" Width="70" Click="btnCancle_Click" Grid.ColumnSpan="2"/>
+        <TextBox Name="txtBx_CheckPortIP" HorizontalAlignment="Left" Height="20" Margin="30,31,0,0" TextWrapping="Wrap" Text="10.61.50.231" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
+        <TextBox Name="txtBx_CheckPort" HorizontalAlignment="Left" Height="20" Margin="165,31,0,0" TextWrapping="Wrap" Text="102" VerticalAlignment="Top" Width="39" PreviewTextInput="txtBx_CheckPortPrevTextInput" Grid.Column="1"/>
+        <TextBlock Name="txtBlock_CheckPortResult" HorizontalAlignment="Left" Height="88" Margin="34,66,0,0" TextWrapping="Wrap" Text="Check port" VerticalAlignment="Top" Width="337" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cmbBxPortTiaSelection" HorizontalAlignment="Left" Margin="215,29,0,0" VerticalAlignment="Top" Width="220" SelectionChanged="cmbBx_portTiaSelectionChanged" Grid.Column="1">
+            <ComboBoxItem IsSelected="True">IsoOnTcp and HMI: 102</ComboBoxItem>
+            <ComboBoxItem>TIA multiuser server: 8735</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="cmbBxPortZenonSelection" HorizontalAlignment="Left" Margin="215,56,0,0" VerticalAlignment="Top" Width="220" SelectionChanged="cmbBx_portZenonSelectionChanged" Grid.Column="1">
+            <ComboBoxItem IsSelected="True" Content="zenon webservice tunneling: 8080"/>
+            <ComboBoxItem Content="zenon network service: 1100"/>
+            <ComboBoxItem Content="zenon trasnport service: 1101"/>
+            <ComboBoxItem Content="zenon webservice classic: 1102"/>
+            <ComboBoxItem Content="zenon db classic: 1103"/>
+            <ComboBoxItem Content="zenon sql browser service: 1434"/>
+            <ComboBoxItem Content="zenon admin service: 50777"/>
+            <ComboBoxItem Content="zenon license service: 50784"/>
+            <ComboBoxItem Content="zenon logging service: 50780"/>
+            <ComboBoxItem Content="zenon snmpt service: 50782"/>
+        </ComboBox>
+        <ComboBox x:Name="cmbBxPortCommonSelection" HorizontalAlignment="Left" Margin="215,83,0,0" VerticalAlignment="Top" Width="220" SelectionChanged="cmbBx_portCommonSelectionChanged" Grid.Column="1">
+            <ComboBoxItem IsSelected="True" Content="http: 80"/>
+            <ComboBoxItem Content="https: 443"/>
+            <ComboBoxItem Content="ssh: 22"/>
+            <ComboBoxItem Content="ftp: 22"/>
+        </ComboBox> 
+    </Grid>
+</Window>
